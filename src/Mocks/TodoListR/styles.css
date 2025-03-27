@@ -1,0 +1,24 @@
+.todo-container {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .todo-input-group {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  
+  .todo-list {
+    padding-left: 0;
+    list-style: none;
+  }
+  
+  .todo-item {
+    margin-bottom: 8px;
+  }
+  
+  .remove-button {
+    margin-left: 8px;
+  }
+  

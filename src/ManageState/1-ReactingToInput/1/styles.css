@@ -1,0 +1,20 @@
+.background {
+  padding: 20px;
+  background-color: white;
+  text-align: center;
+}
+
+.background--active {
+  background-color: rebeccapurple;
+}
+
+.picture {
+  width: 200px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.picture--active {
+  width: 300px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
