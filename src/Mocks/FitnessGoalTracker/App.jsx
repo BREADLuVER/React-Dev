@@ -34,11 +34,17 @@ const FitnessGoalForm = () => {
         value={goal}
         onChange={(e) => setGoal(e.target.value)}
       />
-      <select value={category} onChange={(e) => setCategory(e.target.value)}>
-        <option value="Strength">Strength</option>
-        <option value="Leg">Leg</option>
-        <option value="Calorie">Calorie</option>
-      </select>
+        <select
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+        >
+          <option value="" disabled>
+            Select category
+          </option>
+          <option value="Strength">Strength</option>
+          <option value="Leg">Leg</option>
+          <option value="Calorie">Calorie</option>
+        </select>
       <input
         type="number"
         placeholder="Reps"
