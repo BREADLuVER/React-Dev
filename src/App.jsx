@@ -30,7 +30,9 @@ import LargeImagePractice from "./ManageState/6-PassingDataDWC/App.jsx";
 import GoalTracker from "./Mocks/FitnessGoalTracker/App.jsx";
 import ReduxLogin from "./Mocks/LoginRedux/App.jsx"
 import { store } from "./Mocks/LoginRedux/store/store.jsx"
-import TodoApp from "./Debugging/1/App.jsx";
+import TodoApp from "./Debugging/TodoList/App.jsx";
+import MoodTracker from "./Debugging/MoodTracker/App.jsx";
+import { ThemeProvider } from "./Debugging/MoodTracker/ThemeContext.jsx";
 
 export default function App() {
   return (
@@ -68,6 +70,9 @@ export default function App() {
       </Provider>
       <LargeImagePractice /> */}
       <TodoApp />
+      <ThemeProvider>
+        <MoodTracker />
+      </ThemeProvider>
     </div>
   );
 }
