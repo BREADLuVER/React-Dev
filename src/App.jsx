@@ -1,4 +1,7 @@
 import "./styles.css";
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
 import CounterList from "./AddingInteractivity/1-Interactivity/CounterList";
 import Gallery from "./AddingInteractivity/2-ComponentMemory/1/App.jsx";
 import Form from "./AddingInteractivity/2-ComponentMemory/2/App.jsx";
@@ -25,6 +28,9 @@ import TodoListR from "./Mocks/TodoListR/App.jsx";
 import { TodoProvider } from "./Mocks/TodoListR/TodoContext.jsx";
 import LargeImagePractice from "./ManageState/6-PassingDataDWC/App.jsx";
 import GoalTracker from "./Mocks/FitnessGoalTracker/App.jsx";
+import ReduxLogin from "./Mocks/LoginRedux/App.jsx"
+import { store } from "./Mocks/LoginRedux/store/store.jsx"
+import TodoApp from "./Debugging/1/App.jsx";
 
 export default function App() {
   return (
@@ -54,8 +60,14 @@ export default function App() {
       <TodoProvider>
         <TodoListR />
       </TodoProvider> */}
-      <GoalTracker />
-      {/* <LargeImagePractice /> */}
+      {/* <GoalTracker />
+      <Provider store={store}>
+        <div>
+          <ReduxLogin />
+        </div>
+      </Provider>
+      <LargeImagePractice /> */}
+      <TodoApp />
     </div>
   );
 }
