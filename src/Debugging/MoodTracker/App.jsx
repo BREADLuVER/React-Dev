@@ -8,7 +8,7 @@ function MoodTracker() {
   const [moodLog, setMoodLog] = useState([]);
 
   const { darkMode, toggleTheme } = useTheme();
-  console.log("useTheme()", useTheme());
+  console.log("useTheme()", useTheme);
   const handleAddMood = () => {
     if (!currentMood) return;
 
