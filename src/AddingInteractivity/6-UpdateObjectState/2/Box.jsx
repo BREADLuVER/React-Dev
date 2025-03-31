@@ -45,7 +45,6 @@ export default function Box({
         height: 100,
         cursor: 'grab',
         backgroundColor: color,
-        position: 'absolute',
         border: '1px solid black',
         display: 'flex',
         justifyContent: 'center',

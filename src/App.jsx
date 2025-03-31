@@ -37,7 +37,7 @@ import Button from "./components/Button";
 
 export default function App() {
   return (
-    <div className="App">
+    <div className="App" style={{ border: '2px solid red' }}>
       {/* <CounterList />
       <Gallery />
       <Form />
@@ -62,14 +62,14 @@ export default function App() {
       {/* <SelectForm />
       <TodoProvider>
         <TodoListR />
-      </TodoProvider> */}
-      {/* <GoalTracker />
+      </TodoProvider>
+      <LargeImagePractice />  */}
+      <GoalTracker />
       <Provider store={store}>
         <div>
           <ReduxLogin />
         </div>
       </Provider>
-      <LargeImagePractice /> */}
       <TodoApp />
       <ThemeProvider>
         <MoodTracker />
