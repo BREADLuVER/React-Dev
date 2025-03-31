@@ -52,7 +52,9 @@ const FitnessGoalForm = () => {
         value={reps}
         onChange={(e) => setReps(e.target.value)}
       />
-      <button onClick={handleAddGoal}>Add Goal</button>
+      <Button variant="primary" onClick={handleAddGoal}>
+        Add Goal
+      </Button>
     </div>
   );
 };
@@ -61,7 +63,7 @@ const FitnessGoalList = () => {
   const { state, dispatch } = useContext(FitnessContext);
 
   const handleAchieved = (id) => {
-    dispatch({ type: "REMOVE_GOAL", payload: id });
+    dispatch({ type: "COMPLETE_GOAL", payload: id });
   };
 
   return (
@@ -73,15 +75,26 @@ const FitnessGoalList = () => {
           return (
             <li key={item.id}>
               <strong>{item.goal}</strong> | {item.category} | {item.reps} reps
-              <button
+              <Button
+                variant="primary"
                 onClick={() => handleAchieved(item.id)}
                 style={{ marginLeft: "10px" }}
               >
                 Achieved
-              </button>
+              </Button>
             </li>
           );
         })}
+      </ul>
+
+      <h3 style={{ marginTop: "30px" }}>Recently Achieved Goals</h3>
+      {state.completedGoals.length === 0 && <p>No completed goals yet.</p>}
+      <ul>
+        {state.completedGoals.map((item) => (
+          <li key={item.id}>
+            ✅ <strong>{item.goal}</strong> | {item.category} | {item.reps} reps
+          </li>
+        ))}
       </ul>
     </div>
   );
