@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { FitnessContext, FitnessProvider } from "./FitnessContext";
 import Button from "../../components/Button";
+import styles from "./FitnessTracker.module.css"
 
 const FitnessGoalForm = () => {
   const [goal, setGoal] = useState("");
@@ -27,18 +28,16 @@ const FitnessGoalForm = () => {
   };
 
   return (
-    <div style={{ marginBottom: "20px", display: "grid" }}>
+    <div className={styles.section}>
       <h2>Add Fitness Goal</h2>
-      <input
-        type="text"
-        placeholder="Enter goal"
-        value={goal}
-        onChange={(e) => setGoal(e.target.value)}
-      />
-        <select
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
-        >
+      <div className={styles.inputGroup}>
+        <input
+          type="text"
+          placeholder="Enter goal"
+          value={goal}
+          onChange={(e) => setGoal(e.target.value)}
+        />
+        <select value={category} onChange={(e) => setCategory(e.target.value)}>
           <option value="" disabled>
             Select category
           </option>
@@ -46,15 +45,16 @@ const FitnessGoalForm = () => {
           <option value="Leg">Leg</option>
           <option value="Calorie">Calorie</option>
         </select>
-      <input
-        type="number"
-        placeholder="Reps"
-        value={reps}
-        onChange={(e) => setReps(e.target.value)}
-      />
-      <Button variant="primary" onClick={handleAddGoal}>
-        Add Goal
-      </Button>
+        <input
+          type="number"
+          placeholder="Reps"
+          value={reps}
+          onChange={(e) => setReps(e.target.value)}
+        />
+        <Button variant="primary" onClick={handleAddGoal}>
+          Add Goal
+        </Button>
+      </div>
     </div>
   );
 };
@@ -67,31 +67,27 @@ const FitnessGoalList = () => {
   };
 
   return (
-    <div>
+    <div className={styles.section}>
       <h2>Your Fitness Goals</h2>
       {state.goals.length === 0 && <p>No goals yet.</p>}
-      <ul>
-        {state.goals.map((item) => {
-          return (
-            <li key={item.id}>
+      <ul className={styles.goalList}>
+        {state.goals.map((item) => (
+          <li key={item.id} className={styles.goalItem}>
+            <span>
               <strong>{item.goal}</strong> | {item.category} | {item.reps} reps
-              <Button
-                variant="primary"
-                onClick={() => handleAchieved(item.id)}
-                style={{ marginLeft: "10px" }}
-              >
-                Achieved
-              </Button>
-            </li>
-          );
-        })}
+            </span>
+            <Button variant="secondary" onClick={() => handleAchieved(item.id)}>
+              Achieved
+            </Button>
+          </li>
+        ))}
       </ul>
 
       <h3 style={{ marginTop: "30px" }}>Recently Achieved Goals</h3>
       {state.completedGoals.length === 0 && <p>No completed goals yet.</p>}
-      <ul>
+      <ul className={styles.completedList}>
         {state.completedGoals.map((item) => (
-          <li key={item.id}>
+          <li key={item.id} className={styles.goalItem}>
             ✅ <strong>{item.goal}</strong> | {item.category} | {item.reps} reps
           </li>
         ))}
@@ -103,8 +99,10 @@ const FitnessGoalList = () => {
 export default function GoalTracker() {
   return (
     <FitnessProvider>
-      <FitnessGoalForm />
-      <FitnessGoalList />
+      <div className={styles.container}>
+        <FitnessGoalForm />
+        <FitnessGoalList />
+      </div>
     </FitnessProvider>
   );
 }
