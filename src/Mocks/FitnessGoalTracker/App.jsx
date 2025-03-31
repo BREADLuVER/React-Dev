@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import { FitnessContext, FitnessProvider } from "./FitnessContext";
+import Button from "../../components/Button";
 
 const FitnessGoalForm = () => {
   const [goal, setGoal] = useState("");
