@@ -33,6 +33,7 @@ import { store } from "./Mocks/LoginRedux/store/store.jsx"
 import TodoApp from "./Debugging/TodoList/App.jsx";
 import MoodTracker from "./Debugging/MoodTracker/App.jsx";
 import { ThemeProvider } from "./Debugging/MoodTracker/ThemeContext.jsx";
+import Button from "./components/Button";
 
 export default function App() {
   return (
@@ -73,6 +74,12 @@ export default function App() {
       <ThemeProvider>
         <MoodTracker />
       </ThemeProvider>
+      
+      <div style={{ marginTop: "2rem" }}>
+        <Button variant="primary" onClick={() => alert("Hello!")}>
+          Test Button
+        </Button>
+      </div>
     </div>
   );
 }
