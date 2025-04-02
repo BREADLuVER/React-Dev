@@ -2,7 +2,7 @@ import React, {useReducer} from "react";
 import { undoRedoReducer, initialState } from "./reducer";
 import { ActionTypes } from "./types";
 
-export const UndoRedoList = () => {
+export const UndoRedoList1 = () => {
     const [state, dispatch] = useReducer(undoRedoReducer, initialState)
     const {items} = state.present
 

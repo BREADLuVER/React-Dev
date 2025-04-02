@@ -18,7 +18,7 @@ export const undoRedoReducer = (state, action) => {
                 items: [...present.items, action.payload],
             }
             return {
-                past: {...past, present},
+                past: [...past, present],
                 present: newPresent,
                 future: [],
             }
@@ -30,6 +30,8 @@ export const undoRedoReducer = (state, action) => {
                 ...present,
                 items: present.items.slice(0,-1)
             }
+            console.log('Type of past:', typeof past);
+            console.log('Is past an array:', Array.isArray(past));
             return {
                 past: [...past, present],
                 present: newPresent,
