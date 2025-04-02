@@ -34,7 +34,7 @@ import TodoApp from "./Debugging/TodoList/App.jsx";
 import MoodTracker from "./Debugging/MoodTracker/App.jsx";
 import { ThemeProvider } from "./Debugging/MoodTracker/ThemeContext.jsx";
 import Button from "./components/Button";
-import { UndoRedoList1 } from "./components/UndoRedo-reduce/UndoRedoList.jsx";
+import { UndoRedoList1 } from "./Mocks/UndoRedo-reduce/UndoRedoList.jsx";
 
 export default function App() {
   return (
