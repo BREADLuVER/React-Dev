@@ -35,6 +35,7 @@ import MoodTracker from "./Debugging/MoodTracker/App.jsx";
 import { ThemeProvider } from "./Debugging/MoodTracker/ThemeContext.jsx";
 import Button from "./components/Button";
 import { UndoRedoList1 } from "./Mocks/UndoRedo-reduce/UndoRedoList.jsx";
+import DebugCounter from "./Debugging/BasicCounter/App.jsx";
 
 export default function App() {
   return (
@@ -65,7 +66,7 @@ export default function App() {
         <TodoListR />
       </TodoProvider>
       <LargeImagePractice />  */}
-      <GoalTracker />
+      {/* <GoalTracker />
       <Provider store={store}>
         <div>
           <ReduxLogin />
@@ -82,7 +83,8 @@ export default function App() {
         </Button>
       </div>
 
-      <UndoRedoList1 />
+      <UndoRedoList1 /> */}
+      <DebugCounter />
     </div>
   );
 }
