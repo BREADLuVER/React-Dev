@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-
+import { useCounterHooks } from "../../hooks/counterHook";
+// src\hooks\counterHook.jsx
 export default function DebugCounter() {
-    const [count, setCount] = useState(0);
+    const {count, increment, reset } = useCounterHooks(0);
 
     useEffect(() => {
         console.log('updated count after render:', count);
@@ -10,9 +11,9 @@ export default function DebugCounter() {
     const handleClick = () => {
         if (count === 5) {
             alert("Max count reached");
-            setCount(0); // reset
+            reset();
         } else {
-            setCount(prev => prev + 1);
+            increment();
         }
     };
 
