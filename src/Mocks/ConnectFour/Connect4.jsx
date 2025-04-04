@@ -92,6 +92,7 @@ const ConnectFour = () => {
     return (
         <div className="game">
           <h2 className="winner">winner: {winner}</h2>
+          {/* broke component into board, cell */}
           <Board board={board} onPlayerMove={playerInput} />
         </div>
       );
