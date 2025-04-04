@@ -36,6 +36,7 @@ import { ThemeProvider } from "./Debugging/MoodTracker/ThemeContext.jsx";
 import Button from "./components/Button";
 import { UndoRedoList1 } from "./Mocks/UndoRedo-reduce/UndoRedoList.jsx";
 import DebugCounter from "./Debugging/BasicCounter/App.jsx";
+import UserList from "./Debugging/BuggyFetch/App.jsx";
 
 export default function App() {
   return (
@@ -85,6 +86,7 @@ export default function App() {
 
       <UndoRedoList1 /> */}
       <DebugCounter />
+      < UserList />
     </div>
   );
 }
