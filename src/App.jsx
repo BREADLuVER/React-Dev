@@ -40,6 +40,7 @@ import UserList from "./Debugging/BuggyFetch/App.jsx";
 import { ToggleGhostFetcher, GhostFetcher } from "./Debugging/GhostFetcher/App.jsx";
 import ConnectFour from "./Mocks/ConnectFour/Connect4.jsx";
 import BlogViewer from "./Debugging/BuggyBlog/App.jsx";
+import ProductList from "./Mocks/ProductsPage/App.jsx";
 
 export default function App() {
   return (
@@ -94,6 +95,7 @@ export default function App() {
       <ToggleGhostFetcher /> */}
       {/* <ConnectFour /> */}
       <BlogViewer />
+      <ProductList />
     </div>
   );
 }
