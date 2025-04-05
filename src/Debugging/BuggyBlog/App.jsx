@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const posts = [
     { id: 1, title: "First Post", content: "This is the first post." },
@@ -7,14 +7,28 @@ const posts = [
 ];
 
 export default function BlogViewer() {
-    const [selectedPostId, setSelectedPostId] = useState<number | null>(null);
+    const [selectedPostId, setSelectedPostId] = useState(null);
+    const [viewCount, setViewCount] = useState(0);
 
-    const handleSelectPost = (id: number) => {
-        console.log("Selecting post with id:", id);
-        setSelectedPostId(id);
+    const handleSelectPost = (post) => {
+        console.log("Selecting post:", post);
+        setSelectedPostId(post.id);
     };
 
     const selectedPost = posts.find(post => post.id === selectedPostId);
+
+    useEffect(() => {
+        if (selectedPost) {
+            console.log("Selected post changed to:", selectedPost.title);
+            setViewCount(prev => prev + 1);
+        }
+    }, [selectedPost]);
+    
+    useEffect(() => {
+        if (selectedPost) {
+            console.log("Selected post changed to:", selectedPost.title);
+        }
+    }, [selectedPost]);
 
     return (
         <div>
@@ -22,7 +36,7 @@ export default function BlogViewer() {
             <ul>
                 {posts.map(post => (
                     <li key={post.id}>
-                        <button onClick={() => handleSelectPost(post.id)}>
+                        <button onClick={() => handleSelectPost(post)}>
                             {post.title}
                         </button>
                     </li>
@@ -31,7 +45,11 @@ export default function BlogViewer() {
 
             <div style={{ marginTop: "2rem" }}>
                 <h2>Selected Post</h2>
-                <p>{selectedPost.content}</p>
+                <p>{selectedPost ? selectedPost.content : "none"}</p>
+            </div>
+
+            <div>
+                <h2>View Count: {viewCount}</h2>
             </div>
         </div>
     );
