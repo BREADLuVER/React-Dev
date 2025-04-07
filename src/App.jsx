@@ -28,8 +28,8 @@ import TodoListR from "./Mocks/TodoListR/App.jsx";
 import { TodoProvider } from "./Mocks/TodoListR/TodoContext.jsx";
 import LargeImagePractice from "./ManageState/6-PassingDataDWC/App.jsx";
 import GoalTracker from "./Mocks/FitnessGoalTracker/App.jsx";
-import ReduxLogin from "./Mocks/LoginRedux/App.jsx"
-import { store } from "./Mocks/LoginRedux/store/store.jsx"
+import ReduxLogin from "./Mocks/LoginRedux/App.jsx";
+import { store } from "./Mocks/LoginRedux/store/store.jsx";
 import TodoApp from "./Debugging/TodoList/App.jsx";
 import MoodTracker from "./Debugging/MoodTracker/App.jsx";
 import { ThemeProvider } from "./Debugging/MoodTracker/ThemeContext.jsx";
@@ -37,7 +37,10 @@ import Button from "./components/Button";
 import { UndoRedoList1 } from "./Mocks/UndoRedo-reduce/UndoRedoList.jsx";
 import DebugCounter from "./Debugging/BasicCounter/App.jsx";
 import UserList from "./Debugging/BuggyFetch/App.jsx";
-import { ToggleGhostFetcher, GhostFetcher } from "./Debugging/GhostFetcher/App.jsx";
+import {
+  ToggleGhostFetcher,
+  GhostFetcher,
+} from "./Debugging/GhostFetcher/App.jsx";
 import ConnectFour from "./Mocks/ConnectFour/Connect4.jsx";
 import BlogViewer from "./Debugging/BuggyBlog/App.jsx";
 import ProductList from "./Mocks/ProductsPage/App.jsx";
@@ -45,7 +48,7 @@ import DebugTodoApp from "./Debugging/DebugToDo/App.jsx";
 
 export default function App() {
   return (
-    <div className="App" style={{ border: '2px solid red' }}>
+    <div className="App" style={{ border: "2px solid red" }}>
       {/* <CounterList />
       <Gallery />
       <Form />
@@ -94,10 +97,10 @@ export default function App() {
       < UserList />
       <GhostFetcher />
       <ToggleGhostFetcher /> */}
-      {/* <ConnectFour /> */}
+      <ConnectFour />
       {/* <BlogViewer />
       <ProductList /> */}
-      <DebugTodoApp />
+      {/* <DebugTodoApp /> */}
     </div>
   );
 }
