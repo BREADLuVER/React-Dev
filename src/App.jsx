@@ -102,8 +102,14 @@ export default function App() {
       {/* <ConnectFour /> */}
       {/* <BlogViewer />
       <ProductList /> */}
+<<<<<<< HEAD
       {/* <DebugTodoApp /> */}
       <ExerciseHoc />
+=======
+      <DebugTodoApp />
+      <ClickCounter />
+      <HoverCounter />
+>>>>>>> 8204a8410624be3f2633d837b5858e852e15264e
     </div>
   );
 }
