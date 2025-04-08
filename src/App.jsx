@@ -42,6 +42,8 @@ import ConnectFour from "./Mocks/ConnectFour/Connect4.jsx";
 import BlogViewer from "./Debugging/BuggyBlog/App.jsx";
 import ProductList from "./Mocks/ProductsPage/App.jsx";
 import DebugTodoApp from "./Debugging/DebugToDo/App.jsx";
+import ClickCounter from "./components/clickCounter/ClickCounter.jsx";
+import HoverCounter from "./components/clickCounter/HoverCounter.jsx";
 
 export default function App() {
   return (
@@ -98,6 +100,8 @@ export default function App() {
       {/* <BlogViewer />
       <ProductList /> */}
       <DebugTodoApp />
+      <ClickCounter />
+      <HoverCounter />
     </div>
   );
 }
