@@ -1,74 +1,74 @@
 import React, { useState, useRef } from "react";
 
 export default function DebugTodoApp() {
-    const [tasks, setTasks] = useState([]);
-    const [filter, setFilter] = useState("all");
-    const [input, setInput] = useState("");
-    const nextId = useRef(1);
-    
-    const handleAddTask = () => {
-        if (!input) return;
+  const [tasks, setTasks] = useState([]);
+  const [filter, setFilter] = useState("all");
+  const [input, setInput] = useState("");
+  const nextId = useRef(1);
 
-        const newTask = {
-            id: nextId.current++,
-            text: input,
-            completed: false,
-        };
+  const handleAddTask = () => {
+    if (!input) return;
 
-        setTasks(prev => [...prev, newTask]);
-        setInput("");
+    const newTask = {
+      id: nextId.current++,
+      text: input,
+      completed: false,
     };
 
-    const handleToggleTask = (id) => {
-        const updatedTasks = tasks.map(task => {
-            if (task.id === id) {
-                task.completed = {...task, completed: !task.completed};
-            }
-            return task;
-        });
+    setTasks((prev) => [...prev, newTask]);
+    setInput("");
+  };
 
-        setTasks(updatedTasks);
-    };
-
-    const filteredTasks = tasks.filter(task => {
-        if (filter === "active") return !task.completed;
-        if (filter === "completed") return task.completed;
-        return true;
+  const handleToggleTask = (id) => {
+    const updatedTasks = tasks.map((task) => {
+      if (task.id === id) {
+        task.completed = { ...task, completed: !task.completed };
+      }
+      return task;
     });
 
-    return (
-        <div>
-            <h1>Todo List</h1>
+    setTasks(updatedTasks);
+  };
 
-            <input
-                name = "task"
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                placeholder="Enter a task"
-            />
-            <button onClick={handleAddTask}>Add</button>
+  const filteredTasks = tasks.filter((task) => {
+    if (filter === "active") return !task.completed;
+    if (filter === "completed") return task.completed;
+    return true;
+  });
 
-            <div>
-                <button onClick={() => setFilter("all")}>All</button>
-                <button onClick={() => setFilter("active")}>Active</button>
-                <button onClick={() => setFilter("completed")}>Completed</button>
-            </div>
+  return (
+    <div>
+      <h1>Todo List</h1>
 
-            <ul>
-                {filteredTasks.map(task => (
-                    <li key={task.id}>
-                        <label>
-                            <input
-                                name="filtered-tasks"
-                                type="checkbox"
-                                checked={task.completed}
-                                onChange={() => handleToggleTask(task.id)}
-                            />
-                            {task.text}
-                        </label>
-                    </li>
-                ))}
-            </ul>
-        </div>
-    );
+      <input
+        name="task"
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+        placeholder="Enter a task"
+      />
+      <button onClick={handleAddTask}>Add</button>
+
+      <div>
+        <button onClick={() => setFilter("all")}>All</button>
+        <button onClick={() => setFilter("active")}>Active</button>
+        <button onClick={() => setFilter("completed")}>Completed</button>
+      </div>
+
+      <ul>
+        {filteredTasks.map((task) => (
+          <li key={task.id}>
+            <label>
+              <input
+                name="filtered-tasks"
+                type="checkbox"
+                checked={task.completed}
+                onChange={() => handleToggleTask(task.id)}
+              />
+              {task.text}
+            </label>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }
