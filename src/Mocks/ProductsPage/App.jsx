@@ -2,18 +2,17 @@ import React, {useEffect,useState} from "react";
 import "./ProductList.css";
 
 export default function ProductList() {
+    const [selectedProduct, setSelectedProduct] = useState(null);
     const [products, setProducts] = useState([])
     const [error, setError] = useState(null)
     const [loading, setLoading] = useState(true)
-    const [selectedProduct, setSelectedProduct] = useState(null);
-
     useEffect(() => {
         async function fetchProducts() {
             try {
                 const response = await fetch("https://fakestoreapi.com/products")
 
                 if (!response.ok) {
-                    throw new Error("Failed to fetch")
+                    throw new Error("Failed to fetch"
                 }
                 
                 const data = await response.json()
