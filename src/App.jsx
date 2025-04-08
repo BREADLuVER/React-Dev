@@ -45,8 +45,10 @@ import ConnectFour from "./Mocks/ConnectFour/Connect4.jsx";
 import BlogViewer from "./Debugging/BuggyBlog/App.jsx";
 import ProductList from "./Mocks/ProductsPage/App.jsx";
 import DebugTodoApp from "./Debugging/DebugToDo/App.jsx";
+import ExerciseHoc from "./ExerciseHoc/index.jsx";
 
 export default function App() {
+  // return <HocExercise />;
   return (
     <div className="App" style={{ border: "2px solid red" }}>
       {/* <CounterList />
@@ -97,10 +99,11 @@ export default function App() {
       < UserList />
       <GhostFetcher />
       <ToggleGhostFetcher /> */}
-      <ConnectFour />
+      {/* <ConnectFour /> */}
       {/* <BlogViewer />
       <ProductList /> */}
       {/* <DebugTodoApp /> */}
+      <ExerciseHoc />
     </div>
   );
 }
