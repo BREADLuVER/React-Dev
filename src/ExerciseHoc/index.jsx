@@ -6,10 +6,10 @@ import ErrorBoundary from "./ErrorBoundary";
 export default function ExerciseHoc() {
   return (
     <div className="HocExercise">
-      <A />
+      {/* <A /> */}
       {/* <ErrorBoundary> */}
       <B />
-      <C />
+      {/* <C /> */}
       {/* </ErrorBoundary> */}
     </div>
   );

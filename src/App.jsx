@@ -46,6 +46,8 @@ import BlogViewer from "./Debugging/BuggyBlog/App.jsx";
 import ProductList from "./Mocks/ProductsPage/App.jsx";
 import DebugTodoApp from "./Debugging/DebugToDo/App.jsx";
 import ExerciseHoc from "./ExerciseHoc/index.jsx";
+import ClickCounter from "./components/clickCounter/ClickCounter.jsx";
+import HoverCounter from "./components/clickCounter/HoverCounter.jsx";
 
 export default function App() {
   // return <HocExercise />;
@@ -102,14 +104,10 @@ export default function App() {
       {/* <ConnectFour /> */}
       {/* <BlogViewer />
       <ProductList /> */}
-<<<<<<< HEAD
-      {/* <DebugTodoApp /> */}
-      <ExerciseHoc />
-=======
       <DebugTodoApp />
       <ClickCounter />
       <HoverCounter />
->>>>>>> 8204a8410624be3f2633d837b5858e852e15264e
+      <ExerciseHoc />
     </div>
   );
 }
