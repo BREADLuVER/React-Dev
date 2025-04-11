@@ -48,6 +48,8 @@ import DebugTodoApp from "./Debugging/DebugToDo/App.jsx";
 import ExerciseHoc from "./ExerciseHoc/index.jsx";
 import ClickCounter from "./components/clickCounter/ClickCounter.jsx";
 import HoverCounter from "./components/clickCounter/HoverCounter.jsx";
+import ShowPages from "./components/Pagination";
+import SearchProduct from "./Mocks/Pagination/SearchProducts.jsx";
 
 export default function App() {
   // return <HocExercise />;
@@ -108,6 +110,8 @@ export default function App() {
       <ClickCounter />
       <HoverCounter />
       <ExerciseHoc />
+      <ShowPages />
+      <SearchProduct />
     </div>
   );
 }
